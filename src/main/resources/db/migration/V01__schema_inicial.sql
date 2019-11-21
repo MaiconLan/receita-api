@@ -9,9 +9,6 @@ CREATE TABLE public.usuario
 
 );
 
-ALTER TABLE public.usuario
-    OWNER to postgres;
-
 CREATE TABLE public.receita
 (
     id_receita SERIAL  NOT NULL,
@@ -23,8 +20,6 @@ CREATE TABLE public.receita
 
 );
 
-ALTER TABLE public.receita
-    OWNER to postgres;
 
 CREATE TABLE public.lista_compra
 (
@@ -34,8 +29,6 @@ CREATE TABLE public.lista_compra
 
 );
 
-ALTER TABLE public.lista_compra
-    OWNER to postgres;
 
 CREATE TABLE public.tipo
 (
@@ -44,9 +37,6 @@ CREATE TABLE public.tipo
     CONSTRAINT id_tipo_pk PRIMARY KEY (id_tipo)
 
 );
-
-ALTER TABLE public.tipo
-    OWNER to postgres;
 
 CREATE TABLE public.produto
 (
@@ -61,9 +51,6 @@ CREATE TABLE public.produto
         ON DELETE NO ACTION
 
 );
-
-ALTER TABLE public.produto
-    OWNER to postgres;
 
 CREATE TABLE public.produto_lista_compra
 (
@@ -80,8 +67,5 @@ CREATE TABLE public.produto_lista_compra
         ON DELETE NO ACTION
 
 );
-
-ALTER TABLE public.produto_lista_compra
-    OWNER to postgres;
 
 INSERT INTO public.usuario (nome, email, login, senha) VALUES ('Maicon Lanzendorf', 'maiconteste@teste.com', 'admin', '$2a$10$5PAR/F4nejwxTlwFPWh4sOscqEB2dBCSCAKGaC3e652jLMsXl.yb.');
