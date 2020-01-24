@@ -21,7 +21,7 @@ public class ListaCompra {
     @NotNull
     private String descricao;
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(name = "produto_lista_compra", joinColumns = @JoinColumn(name = "id_lista_compra")
             , inverseJoinColumns = @JoinColumn(name = "id_produto"))
     private List<Produto> produtos;
