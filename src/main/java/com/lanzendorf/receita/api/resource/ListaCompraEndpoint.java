@@ -42,7 +42,7 @@ public class ListaCompraEndpoint {
     @GetMapping("/{idListaCompra}")
     public ResponseEntity<ListaCompra> buscar(@PathVariable Long idListaCompra) {
         Optional<ListaCompra> optional = listaCompraService.obterListaCompra(idListaCompra);
-        return optional.isPresent() ? ResponseEntity.ok(optional.get()) : ResponseEntity.notFound().build();
+        return optional.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @DeleteMapping("/{idListaCompra}")
