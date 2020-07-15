@@ -19,13 +19,6 @@ public class Produto {
     private Long idProduto;
 
     @NotNull
-    private String nome;
-
-
     private String descricao;
-
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_tipo")
-    private Tipo tipo;
 
 }

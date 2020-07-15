@@ -29,7 +29,7 @@ public class ListaCompraService {
         if (listaCompra.getProdutos() == null || listaCompra.getProdutos().isEmpty())
             throw new ListaCompraServiceException("lista.compra.validacao.produtos.obrigatorio");
 
-        if (listaCompra.getProdutos().stream().anyMatch(p -> StringUtils.isEmpty(p.getNome())))
+        if (listaCompra.getProdutos().stream().anyMatch(p -> StringUtils.isEmpty(p.getDescricao())))
             throw new ListaCompraServiceException("produto.validacao.descricao.obrigatorio");
     }
 

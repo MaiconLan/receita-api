@@ -14,7 +14,6 @@ CREATE TABLE public.receita
     id_receita SERIAL  NOT NULL,
     nome       VARCHAR NOT NULL,
     descricao  VARCHAR,
-    id_tipo    INTEGER,
     publica    BOOLEAN DEFAULT FALSE,
     CONSTRAINT id_receita_pk PRIMARY KEY (id_receita)
 
@@ -29,27 +28,11 @@ CREATE TABLE public.lista_compra
 
 );
 
-
-CREATE TABLE public.tipo
-(
-    id_tipo   SERIAL  NOT NULL,
-    nome      VARCHAR NOT NULL,
-    CONSTRAINT id_tipo_pk PRIMARY KEY (id_tipo)
-
-);
-
 CREATE TABLE public.produto
 (
     id_produto SERIAL  NOT NULL,
-    nome       VARCHAR NOT NULL,
     descricao  VARCHAR,
-    id_tipo    INTEGER,
-    CONSTRAINT id_produto_pk PRIMARY KEY (id_produto),
-    CONSTRAINT id_tipo_fk FOREIGN KEY (id_tipo)
-        REFERENCES public.tipo (id_tipo) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION
-
+    CONSTRAINT id_produto_pk PRIMARY KEY (id_produto)
 );
 
 CREATE TABLE public.produto_lista_compra
